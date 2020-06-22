@@ -1,0 +1,14 @@
+#:include "kv/menu_screen.kv"
+#:include "kv/two_player_screen.kv"
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        name: "screen_manager"
+        MenuScreen:
+            id: menu_screen
+            name: "menu_screen"
+        TwoPlayerScreen:
+            id: two_player_screen
+            name: "two_player_screen"

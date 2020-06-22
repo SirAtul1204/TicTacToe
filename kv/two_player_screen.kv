@@ -1,0 +1,147 @@
+#:import utils kivy.utils
+#:import rgba kivy.utils.get_color_from_hex
+<Label>:
+    font_name: "Fonts/azonix-font/Azonix-1VB0.otf"
+<TwoPlayerScreen>
+    btn0: btn0
+    btn1: btn1
+    btn2: btn2
+    btn3: btn3
+    btn4: btn4
+    btn5: btn5
+    btn6: btn6
+    btn7: btn7
+    btn8: btn8
+    winner_label: winner_label
+    red_score: red_score
+    green_score: green_score
+    turn_label: turn_label
+    FloatLayout:
+        Button:
+            id: menu
+            text: "Menu"
+            on_release: app.changescreen("menu_screen")
+            pos: 10, 620
+            size_hint: None, None
+            size: 110, 70
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+            background_normal: "images/inGameButton.png"
+            font_size: 20
+        Button:
+            id: play_again
+            text: "Play Again"
+            pos: 660, 620
+            size_hint: None, None
+            size: 130, 70
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+            on_release: root.reset()
+            background_normal: "images/inGameButton.png"
+            font_size: 20
+        GridLayout:
+            cols: 3
+            rows: 3
+            size_hint: None, None
+            size: 300, 300
+            pos: 250, 200
+            spacing: 10
+            canvas:
+                Color:
+                    rgb: rgba("#00ffff")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                id: btn0
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(0)
+            Button:
+                id: btn1
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(1)
+            Button:
+                id: btn2
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(2)
+            Button:
+                id: btn3
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(3)
+            Button:
+                id: btn4
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(4)
+            Button:
+                id: btn5
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(5)
+            Button:
+                id: btn6
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(6)
+            Button:
+                id: btn7
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(7)
+            Button:
+                id: btn8
+                text: ""
+                background_normal: "images/black.jpg"
+                on_release: root.do(8)
+        Label:
+            id: winner_label
+            text: "Tie"
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+            size: 300, 150
+            pos: 250, 25
+            size_hint: None, None
+            font_size: 40
+            opacity: 0
+            color: rgba("#00ffff")
+        Label:
+            id: red_score
+            text: "0"
+            color: rgba("#ff0000")
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+            size_hint: None, None
+            size: 300, 150
+            font_size: 50
+            pos: 100, 550
+        Label:
+            id: green_score
+            text: "0"
+            color: rgba("#00ff00")
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+            size_hint: None, None
+            size: 300, 150
+            font_size: 50
+            pos: 390, 550
+        Label:
+            id: turn_label
+            text: "Red"
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+            size: 300, 150
+            pos: 250, 25
+            size_hint: None, None
+            font_size: 40
+            opacity: 1
+            color: rgba("#ff0000")

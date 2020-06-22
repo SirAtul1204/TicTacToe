@@ -1,0 +1,1 @@
+You need Python3 and Kivy version 1.11.1 to run this game
